@@ -1,0 +1,29 @@
+body {
+  padding-top: 40px;
+}
+.content {
+  margin: 0-20px;
+  padding: 20px;
+}
+.main-container > footer {
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+.main-container > footer p {
+  text-align: center;
+}
+.logo {
+  height: auto;
+  width: 100px;
+}
+footer {
+  background-color:#8cd9f7;
+  clear: both;
+  color:#fff;
+  display: block;
+  height:42px;
+  margin-top:40px;
+  padding-top:10px;
+  text-align:center;
+  vertical-align:middle;
+}

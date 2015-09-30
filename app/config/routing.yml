@@ -1,11 +1,8 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
-
 aw_event:
-    resource: "@AwEventBundle/Resources/config/routing.yml"
+    resource: "@AwEventBundle/Controller/"
+    type:     annotation
     prefix:   /
 
 homepage:
     pattern:  /
-    defaults: { _controller: AwEventBundle:Default:index }
+    defaults: { _controller: AwEventBundle:TopPage:index }
