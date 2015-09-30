@@ -16,6 +16,33 @@ body {
   height: auto;
   width: 100px;
 }
+.aw-navbar {
+  margin: 20px 0px 20px 0px;
+  clear:both;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  background-color: #f7b122;
+  color: #fff;
+}
+.nav > li > a {
+  background-color:#8cd9f7;
+  color:#FFFFFF;
+  display: block;
+  padding: 10px 3px;
+  position: relative;
+  text-align: center;
+  width: 120px;
+}
+.nav-pills > li > a {
+  -moz-border-top-left-radius: 4px;
+  -moz-border-top-right-radius: 4px;
+  -moz-border-bottom-radius: 0 !important;
+  -webkit-border-bottom-radius: 0 !important;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+}
 footer {
   background-color:#8cd9f7;
   clear: both;

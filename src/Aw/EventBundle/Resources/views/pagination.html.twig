@@ -1,0 +1,24 @@
+{% if pageCount > 1 %}
+<ul class="pagination">
+    {% if first is defined and current != first %}
+        <li class=""><a href="{{ path(route, query|merge({(pageParameterName):first})) }}">&laquo;</a></li>
+    {% endif %}
+    {% if previous is defined %}
+        <li class=""><a href="{{ path(route, query|merge({(pageParameterName):previous})) }}">&lt;</a></li>
+    {% endif %}
+    {% for page in pagesInRange %}
+        {% if page != current %}
+            <li class=""><a href="{{ path(route, query|merge({(pageParameterName):page})) }}">{{ page }}</a></li>
+        {% else %}
+            <li class="active"><a href="#">{{ page }} <span class="sr-only">(current)</span></a></li>
+        {% endif %}
+    {% endfor %}
+    {% if next is defined %}
+        <li class=""><a href="{{ path(route, query|merge({(pageParameterName):next})) }}">&gt;</a></li>
+    {% endif %}
+    {% if last is defined and current != last %}
+        <li class=""><a href="{{ path(route, query|merge({(pageParameterName):last})) }}">&raquo;</a></li>
+    {% endif %}
+    <li class="">全({{ totalCount }}件)</li>
+</ul>
+{% endif %}

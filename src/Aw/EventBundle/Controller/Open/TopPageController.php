@@ -18,8 +18,6 @@ class TopPageController extends AppController
      */
     public function indexAction()
     {
-        return array(
-            'test' => '準備中'
-        );
+        return array();
     }
 }

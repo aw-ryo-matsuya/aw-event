@@ -18,9 +18,13 @@
 {% block main_body -%}
     <div class="container">
         <header>
-           <img class="logo" src="{{ asset('bundles/awevent/img/aw-logo.png') }}">
+           <a href="{{ path('top')}}"><img class="logo" src="{{ asset('bundles/awevent/img/aw-logo.png') }}"></a>
+           <div class="aw-navbar">{% include "AwEventBundle::navbar.html.twig" %}</div>
         </header>
         <div class="content">
+            <div class="row">
+                <div class="col-sm-12">{% include "AwEventBundle::_message.html.twig" %}</div>
+            </div>
             {% block body %}{% endblock body %}
             <footer><p class="copyright">&copy; アナザーウェア</p></footer>
         </div>
