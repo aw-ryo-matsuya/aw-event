@@ -5,4 +5,4 @@ aw_event:
 
 homepage:
     pattern:  /
-    defaults: { _controller: AwEventBundle:TopPage:index }
+    defaults: { _controller: AwEventBundle:Open/TopPage:index }

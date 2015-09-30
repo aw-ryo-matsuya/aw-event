@@ -1,13 +1,13 @@
 <?php
 
-namespace Aw\EventBundle\Controller;
+namespace Aw\EventBundle\Controller\Open;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Aw\EventBundle\Controller\AppController;
 
-class TopPageController extends Controller
+class TopPageController extends AppController
 {
     /**
      * トップページ
