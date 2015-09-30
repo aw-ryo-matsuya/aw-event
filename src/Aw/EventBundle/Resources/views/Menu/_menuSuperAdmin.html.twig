@@ -2,6 +2,12 @@
     <li>
         <a href="{{ path('super_admin_my_page') }}">マイページ</a>
     </li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            ユーザ管理<span class="caret"></span>
+        </a>
+        {{ knp_menu_render('AwEventBundle:SuperAdminBuilder:userManagement') }}
+    </li>
     <li>
         <a href="{{ path('logout') }}">ログアウト</a>
     </li>

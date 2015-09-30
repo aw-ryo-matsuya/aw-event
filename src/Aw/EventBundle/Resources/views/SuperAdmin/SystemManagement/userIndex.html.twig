@@ -1,0 +1,29 @@
+{% extends "AwEventBundle::layout.html.twig" %}
+
+{% block page_title -%}
+    {{ 'super_admin.userIndexScreen'|trans }}
+{% endblock %}
+
+{% block body -%}
+{{ knp_pagination_render(pagination) }}
+<div class="my-table-responsive">
+    <table class="table table-striped table-bordered table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>{{ 'com_column.select'|trans }}</th>
+                <th{% if pagination.isSorted('t.username') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'user.username'|trans, 't.username') }}</th>
+                <th{% if pagination.isSorted('t.password') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'user.password'|trans, 't.password') }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in pagination %}
+            <tr>
+                <td><input type="radio" name="selId" value="{{ entity.id }}" {% if loop.first %} checked='checked' {% endif %}></td>
+                <td>{{ entity.username }}</td>
+                <td>{{ entity.password }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

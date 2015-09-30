@@ -1,5 +1,16 @@
+#共通
+com_column:
+    select: 選択
 com_page:
     myPageScreen: マイページ
+#画面定義
 top_page:
     indexScreen: トップページ
     loginScreen: ログイン
+super_admin:
+    userIndexScreen: ユーザ一覧
+#カラム
+#ユーザ
+user:
+    username: ユーザネーム
+    password: パスワード

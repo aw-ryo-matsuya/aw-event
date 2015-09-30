@@ -21,8 +21,26 @@ class SystemManagementController extends AppController
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
+    public function myPageAction()
     {
         return array();
+    }
+
+    /**
+     * ユーザ一覧
+     *
+     * @Route("/user_index", name="user_index")
+     * @Method("GET")
+     * @Template()
+     */
+    public function userIndexAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->getRepository('AwEventBundle:User')->getSearchQuery();
+        $pagination = $this->getPaginator($query);
+
+        return array(
+            'pagination' => $pagination
+        );
     }
 }

@@ -21,7 +21,7 @@ class MyPageController extends AppController
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
+    public function myPageAction()
     {
         return array();
     }
