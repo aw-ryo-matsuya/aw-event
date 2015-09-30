@@ -23,6 +23,11 @@
         </header>
         <div class="content">
             <div class="row">
+                <div class="col-sm-12">
+                    {% block breadcrumb %}{{ wo_render_breadcrumbs({separator: '', listId: 'breadcrumbs'}) }}{% endblock breadcrumb %}
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-12">{% include "AwEventBundle::_message.html.twig" %}</div>
             </div>
             {% block body %}{% endblock body %}

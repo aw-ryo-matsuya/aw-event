@@ -71,3 +71,21 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+knp_paginator:
+    page_range: 10
+    default_options:
+        distinct: true
+        page_name: page
+        sort_field_name: sort
+        sort_direction_name: direction
+    template:
+        pagination: AwEventBundle::pagination.html.twig
+        sortable: AwEventBundle::sortableLink.html.twig
+
+stof_doctrine_extensions:
+    orm:
+        default:
+            timestampable: true
+
+white_october_breadcrumbs: ~
