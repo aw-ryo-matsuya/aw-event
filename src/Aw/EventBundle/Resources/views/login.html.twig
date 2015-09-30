@@ -1,0 +1,29 @@
+{% extends "AwEventBundle::layout.html.twig" %}
+
+{% block page_title -%}
+    {{ 'top_page.loginScreen'|trans }}
+{% endblock %}
+
+{% block body %}
+<div class="span6">
+    <form action="{{ path('login_check') }}" method="POST" class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label">ユーザネーム</label>
+            <div class="controls">
+                <input type="text" id="username" name="_username" value="{{ lastUsername }}">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">パスワード</label>
+            <div class="controls">
+                <input type="password" id="password" name="_password">
+            </div>
+        </div>
+        <div style="margin:20px 0px 20px 0px">
+            <div class="btn-group">
+                <button class="btn btn-primary">ログイン</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock body %}

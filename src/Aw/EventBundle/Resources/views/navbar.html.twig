@@ -1,6 +1,8 @@
 {% if app.user %}
     {% if is_granted('ROLE_SUPER_ADMIN') %}
         {% include "AwEventBundle:Menu:_menuSuperAdmin.html.twig" %}
+    {% elseif is_granted('ROLE_MEMBER') %}
+        {% include "AwEventBundle:Menu:_menuMember.html.twig" %}
     {% endif %}
 {% else %}
     {% include "AwEventBundle:Menu:_menuTop.html.twig" %}

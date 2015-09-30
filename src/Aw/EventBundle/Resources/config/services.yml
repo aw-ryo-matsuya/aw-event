@@ -1,4 +1,10 @@
 services:
-#    aw_event.example:
-#        class: Aw\EventBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    # ログインチェック(認証失敗)
+    aw.login_failure_handler:
+        class: Aw\EventBundle\EventListener\AuthenticationFailure
+        arguments: ['@router', '@session']
+
+    # ログインチェック(認証成功)
+    aw.login_success_handler:
+        class: Aw\EventBundle\EventListener\AuthenticationSuccess
+        arguments: ['@router', '@session', '@security.context']

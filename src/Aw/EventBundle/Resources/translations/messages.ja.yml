@@ -1,2 +1,5 @@
+com_page:
+    myPageScreen: マイページ
 top_page:
     indexScreen: トップページ
+    loginScreen: ログイン

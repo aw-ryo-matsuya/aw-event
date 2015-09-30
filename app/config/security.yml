@@ -1,12 +1,39 @@
 security:
+    encoders:
+        Aw\EventBundle\Entity\User:
+            algorithm: sha1
+            iterations: 1
+            encode_as_base64: false
+
     providers:
-        in_memory:
-            memory: ~
+        my_users:
+            entity: { class: Aw\EventBundle\Entity\User, property: username }
+
+    role_hierarchy:
+        ROLE_SUPER_ADMIN: [ROLE_MEMBER]
 
     firewalls:
         dev:
-            pattern: ^/(_(profiler|wdt|error)|css|images|js)/
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
-        default:
+        login:
+            pattern:  ^/login$
+            security: false
+        top:
+            pattern:  ^/top
+            security: false
+        secured_area:
             anonymous: ~
+            pattern: ^/.+
+            form_login:
+                check_path: /login/check
+                login_path: /top
+                failure_handler: aw.login_failure_handler
+                success_handler: aw.login_success_handler
+            logout:
+                path: /logout
+                target: /
+    access_control:
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/member/, roles: ROLE_MEMBER }
+        - { path: ^/super_admin/, roles: ROLE_SUPER_ADMIN }
