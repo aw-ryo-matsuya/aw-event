@@ -30,6 +30,7 @@ class TopPageController extends AppController
      */
     public function loginAction(Request $request)
     {
+        $this->setBreadcrumbList('login');
         $session = $request->getSession();
 
         return $this->render('AwEventBundle::login.html.twig', array(

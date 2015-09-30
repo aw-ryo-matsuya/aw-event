@@ -1,0 +1,16 @@
+#パンくずリスト
+breadcrumbs:
+#####公開
+    #ログイン
+    login:
+        1: top
+        1_name: トップページ
+        2:
+        2_name: ログイン
+#####システム管理者
+    #ユーザ管理
+    user_index:
+        1: super_admin_my_page
+        1_name: マイページ
+        2:
+        2_name: ユーザ一覧

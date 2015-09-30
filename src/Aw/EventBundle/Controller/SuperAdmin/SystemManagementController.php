@@ -35,6 +35,7 @@ class SystemManagementController extends AppController
      */
     public function userIndexAction()
     {
+        $this->setBreadcrumbList('user_index');
         $em = $this->getDoctrine()->getManager();
         $query = $em->getRepository('AwEventBundle:User')->getSearchQuery();
         $pagination = $this->getPaginator($query);
