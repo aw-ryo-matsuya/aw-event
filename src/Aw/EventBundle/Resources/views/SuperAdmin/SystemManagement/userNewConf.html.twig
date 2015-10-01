@@ -1,0 +1,24 @@
+{% extends "AwEventBundle::layout.html.twig" %}
+
+{% block page_title -%}
+    {{ 'super_admin.userNewConfScreen'|trans }}
+{% endblock %}
+
+{% block body -%}
+    <form action="{{ path('user_create') }}" method="POST">
+        {% include "AwEventBundle:SuperAdmin/SystemManagement:_conf.html.twig" %}
+        <section class="button_area">
+            <div class="btn-group">
+                <button type="button" id="cancel" class="btn btn-default btn-xs">{{ 'com_button.cancel'|trans }}</button>
+                <button type="submit" class="btn btn-primary btn-xs">{{ 'com_button.createOK'|trans }}</button>
+            </div>
+        </section>
+    </form>
+    <script type="text/javascript">
+        $('#cancel').click(function() {
+            $form = $('<form action="{{ path('user_new_conf') }}" method="POST">');
+            $form.append('<input type="hidden" name="cancel">');
+            $form.submit();
+        });
+    </script>
+{% endblock %}

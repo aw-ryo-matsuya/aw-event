@@ -1,16 +1,26 @@
 #共通
+com_button:
+    cancel: キャンセル
+    createOK: 登録OK
+    createConf: 登録確認
+    new: 新規
 com_column:
     select: 選択
 com_page:
     myPageScreen: マイページ
+com_message:
+    createOK: 登録が完了しました
+    newConf: 下記内容で登録します
 #画面定義
 top_page:
     indexScreen: トップページ
     loginScreen: ログイン
 super_admin:
     userIndexScreen: ユーザ一覧
-#カラム
-#ユーザ
+    userNewScreen: ユーザ登録
+    userNewConfScreen: ユーザ登録確認
+#ユーザテーブル
 user:
+    role: 権限
     username: ユーザネーム
     password: パスワード

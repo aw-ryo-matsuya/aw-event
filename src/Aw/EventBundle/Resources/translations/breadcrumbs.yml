@@ -14,3 +14,19 @@ breadcrumbs:
         1_name: マイページ
         2:
         2_name: ユーザ一覧
+    user_new:
+        1: super_admin_my_page
+        1_name: マイページ
+        2: user_index
+        2_name: ユーザ一覧
+        3:
+        3_name: ユーザ登録
+    user_new_conf:
+        1: super_admin_my_page
+        1_name: マイページ
+        2: user_index
+        2_name: ユーザ一覧
+        3: user_new
+        3_name: ユーザ登録
+        4:
+        4_name: ユーザ登録確認

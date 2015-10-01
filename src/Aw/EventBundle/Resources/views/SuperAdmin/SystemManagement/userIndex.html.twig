@@ -6,7 +6,8 @@
 
 {% block body -%}
 {{ knp_pagination_render(pagination) }}
-<div class="my-table-responsive">
+<form action="{{ path('user_forward') }}" method="POST">
+    <div class="my-table-responsive">
     <table class="table table-striped table-bordered table-condensed table-hover">
         <thead>
             <tr>
@@ -25,5 +26,9 @@
         {% endfor %}
         </tbody>
     </table>
-</div>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary btn-small" name="selKind" value="new">{{ 'com_button.new'|trans }}</button>
+    </div>
+</form>
 {% endblock %}

@@ -1,0 +1,17 @@
+<div class="form-horizontal">
+    <div class="form-group">
+        <label for="name" class="col-md-2 control-label">{{ 'user.role'|trans }}</label>
+        <div class="col-md-10">{{ form_widget(form.role) }}</div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-md-2 control-label">{{ 'user.username'|trans }}</label>
+        <div class="col-md-10">{{ form_widget(form.username) }}</div>
+        <span class="help-block">{{ form_errors(form.username) }}</span>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-md-2 control-label">{{ 'user.password'|trans }}</label>
+        <div class="col-md-2">{{ form_widget(form.password.first) }}</div>
+        <div class="col-md-8">{{ form_widget(form.password.second) }}</div>
+        <span class="help-block">{{ form_errors(form.password.first) }}</span>
+    </div>
+</div>
