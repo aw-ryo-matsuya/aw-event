@@ -7,10 +7,10 @@
 {% block body -%}
     <form action="{{ path('user_create') }}" method="POST">
         {% include "AwEventBundle:SuperAdmin/SystemManagement:_conf.html.twig" %}
-        <section class="button_area">
+        <section class="button-area">
             <div class="btn-group">
-                <button type="button" id="cancel" class="btn btn-default btn-xs">{{ 'com_button.cancel'|trans }}</button>
-                <button type="submit" class="btn btn-primary btn-xs">{{ 'com_button.createOK'|trans }}</button>
+                <button type="button" id="cancel" class="btn btn-default btn-sm">{{ 'com_button.cancel'|trans }}</button>
+                <button type="submit" class="btn btn-primary btn-sm">{{ 'com_button.createOK'|trans }}</button>
             </div>
         </section>
     </form>

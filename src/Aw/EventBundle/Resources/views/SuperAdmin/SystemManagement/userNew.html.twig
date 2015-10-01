@@ -8,10 +8,10 @@
     <form action="{{ path('user_new_conf') }}" method="POST">
         {{ form_widget(form._token) }}
         {% include "AwEventBundle:SuperAdmin/SystemManagement:_form.html.twig" %}
-        <section class="button_area">
+        <section class="button-area">
             <div class="btn-group">
-                <a href="{{ path('user_index') }}" class="btn btn-default btn-xs">{{ 'com_button.cancel'|trans }}</a>
-                <button type="submit" class="btn btn-primary btn-xs">{{ 'com_button.createConf'|trans }}</button>
+                <a href="{{ path('user_index') }}" class="btn btn-default btn-sm">{{ 'com_button.cancel'|trans }}</a>
+                <button type="submit" class="btn btn-primary btn-sm">{{ 'com_button.createConf'|trans }}</button>
             </div>
         </section>
     </form>
