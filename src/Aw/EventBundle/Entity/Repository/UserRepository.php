@@ -2,9 +2,9 @@
 
 namespace Aw\EventBundle\Entity\Repository;
 
+use Aw\EventBundle\Entity\Repository\AppEntityRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
-use Aw\EventBundle\Entity\Repository\AppEntityRepository;
 
 /**
  * UserRepository

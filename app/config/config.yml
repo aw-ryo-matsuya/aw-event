@@ -5,7 +5,7 @@ imports:
 
 framework:
     #esi:             ~
-    translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] , logging: false }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -63,6 +63,10 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+        filters:
+          softdeleteable:
+            class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+            enabled: true
 
 # Swiftmailer Configuration
 swiftmailer:

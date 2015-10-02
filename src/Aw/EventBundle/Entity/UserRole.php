@@ -2,8 +2,8 @@
 
 namespace Aw\EventBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Aw\EventBundle\Entity\AppEntity;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * UserRole

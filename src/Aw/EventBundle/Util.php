@@ -13,4 +13,16 @@ class Util
 
         return $encodedPassword;
     }
+
+    /**
+     * ログインユーザ情報取得
+     */
+    public static function getCurrentUser()
+    {
+        global $kernel;
+        $token = $kernel->getContainer()->get('security.context')->getToken();
+        $currentUser = $token ? $token->getUser() : null;
+
+        return $currentUser;
+    }
 }

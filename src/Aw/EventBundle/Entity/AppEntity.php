@@ -2,6 +2,7 @@
 
 namespace Aw\EventBundle\Entity;
 
+use Aw\EventBundle\Util;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -156,5 +157,37 @@ abstract class AppEntity
     public function getDeletedAt()
     {
         return $this->deletedAt;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function prePersist()
+    {
+        $currentUser = Util::getCurrentUser();
+
+        if ($currentUser) {
+            $this->createdBy = $currentUser->getId();
+        } else {
+            $this->createdBy = 999999999;
+        }
+
+        $this->createdAt = new \Datetime();
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function preUpdate()
+    {
+        $currentUser = Util::getCurrentUser();
+
+        if ($currentUser) {
+            $this->updatedBy = $currentUser->getId();
+        } else {
+            $this->updatedBy = $this->updatedBy = 999999999;
+        }
+
+        $this->updatedAt = new \Datetime();
     }
 }

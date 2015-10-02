@@ -2,10 +2,10 @@
 
 namespace Aw\EventBundle\Controller\Member;
 
+use Aw\EventBundle\Controller\AppController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Aw\EventBundle\Controller\AppController;
 
 /**
  * 一般ユーザ

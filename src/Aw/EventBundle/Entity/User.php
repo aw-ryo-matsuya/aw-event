@@ -2,12 +2,12 @@
 
 namespace Aw\EventBundle\Entity;
 
+use Aw\EventBundle\Entity\AppEntity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
-use Aw\EventBundle\Entity\AppEntity;
 
 /**
  * User
