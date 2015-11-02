@@ -30,9 +30,9 @@ class UserRole extends AppEntity
     private $userId;
 
     /**
-     * @var mixed
+     * @var \User
      *
-     * @ORM\OneToOne(targetEntity="User", mappedBy="userrole")
+     * @ORM\OneToOne(targetEntity="User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     private $user;
@@ -46,11 +46,27 @@ class UserRole extends AppEntity
 
 
 
+    public function __toString()
+    {
+        return "$this->roleId";
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
     public function getId()
     {
         return $this->id;
     }
 
+    /**
+     * Set userId
+     *
+     * @param integer $userId
+     * @return UserRole
+     */
     public function setUserId($userId)
     {
         $this->userId = $userId;
@@ -58,23 +74,46 @@ class UserRole extends AppEntity
         return $this;
     }
 
+    /**
+     * Get userId
+     *
+     * @return integer
+     */
     public function getUserId()
     {
         return $this->userId;
     }
 
-    public function setUser($user)
+    /**
+     * Set user
+     *
+     * @param \Aw\EventBundle\Entity\User $user
+     * @return UserRole
+     */
+    public function setUser(\Aw\EventBundle\Entity\User $user = NULL)
     {
         $this->user = $user;
 
         return $this;
     }
 
+    /**
+     * Get user
+     *
+     * @return \Aw\EventBundle\Entity\User
+     */
     public function getUser()
     {
         return $this->user;
     }
 
+    /**
+     * Set mstRoleId
+     *
+     * @param integer $mstRoleId
+     *
+     * @return UserRole
+     */
     public function setMstRoleId($mstRoleId)
     {
         $this->mstRoleId = $mstRoleId;
@@ -82,6 +121,11 @@ class UserRole extends AppEntity
         return $this;
     }
 
+    /**
+     * Get mstRoleId
+     *
+     * @return integer
+     */
     public function getMstRoleId()
     {
         return $this->mstRoleId;

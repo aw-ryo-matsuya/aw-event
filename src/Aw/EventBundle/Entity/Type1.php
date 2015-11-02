@@ -30,142 +30,142 @@ class Type1 extends AppEntity
     private $userId;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question1", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question1", type="boolean", length=1, nullable=true)
      */
     private $question1;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question2", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question2", type="boolean", length=1, nullable=true)
      */
     private $question2;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question3", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question3", type="boolean", length=1, nullable=true)
      */
     private $question3;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question4", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question4", type="boolean", length=1, nullable=true)
      */
     private $question4;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question5", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question5", type="boolean", length=1, nullable=true)
      */
     private $question5;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question6", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question6", type="boolean", length=1, nullable=true)
      */
     private $question6;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question7", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question7", type="boolean", length=1, nullable=true)
      */
     private $question7;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question8", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question8", type="boolean", length=1, nullable=true)
      */
     private $question8;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question9", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question9", type="boolean", length=1, nullable=true)
      */
     private $question9;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question10", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question10", type="boolean", length=1, nullable=true)
      */
     private $question10;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question11", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question11", type="boolean", length=1, nullable=true)
      */
     private $question11;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question12", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question12", type="boolean", length=1, nullable=true)
      */
     private $question12;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question13", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question13", type="boolean", length=1, nullable=true)
      */
     private $question13;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question14", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question14", type="boolean", length=1, nullable=true)
      */
     private $question14;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question15", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question15", type="boolean", length=1, nullable=true)
      */
     private $question15;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question16", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question16", type="boolean", length=1, nullable=true)
      */
     private $question16;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question17", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question17", type="boolean", length=1, nullable=true)
      */
     private $question17;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question18", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question18", type="boolean", length=1, nullable=true)
      */
     private $question18;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question19", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question19", type="boolean", length=1, nullable=true)
      */
     private $question19;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="question20", type="string", length=1, nullable=true)
+     * @ORM\Column(name="question20", type="boolean", length=1, nullable=true)
      */
     private $question20;
 
@@ -207,7 +207,7 @@ class Type1 extends AppEntity
     /**
      * Set question1
      *
-     * @param string $question1
+     * @param boolean $question1
      * @return Type1
      */
     public function setQuestion1($question1)
@@ -220,7 +220,7 @@ class Type1 extends AppEntity
     /**
      * Get question1
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion1()
     {
@@ -230,7 +230,7 @@ class Type1 extends AppEntity
     /**
      * Set question2
      *
-     * @param string $question2
+     * @param boolean $question2
      * @return Type1
      */
     public function setQuestion2($question2)
@@ -243,7 +243,7 @@ class Type1 extends AppEntity
     /**
      * Get question2
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion2()
     {
@@ -253,7 +253,7 @@ class Type1 extends AppEntity
     /**
      * Set question3
      *
-     * @param string $question3
+     * @param boolean $question3
      * @return Type1
      */
     public function setQuestion3($question3)
@@ -266,7 +266,7 @@ class Type1 extends AppEntity
     /**
      * Get question3
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion3()
     {
@@ -276,7 +276,7 @@ class Type1 extends AppEntity
     /**
      * Set question4
      *
-     * @param string $question4
+     * @param boolean $question4
      * @return Type1
      */
     public function setQuestion4($question4)
@@ -289,7 +289,7 @@ class Type1 extends AppEntity
     /**
      * Get question4
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion4()
     {
@@ -299,7 +299,7 @@ class Type1 extends AppEntity
     /**
      * Set question5
      *
-     * @param string $question5
+     * @param boolean $question5
      * @return Type1
      */
     public function setQuestion5($question5)
@@ -312,7 +312,7 @@ class Type1 extends AppEntity
     /**
      * Get question5
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion5()
     {
@@ -322,7 +322,7 @@ class Type1 extends AppEntity
     /**
      * Set question6
      *
-     * @param string $question6
+     * @param boolean $question6
      * @return Type1
      */
     public function setQuestion6($question6)
@@ -335,7 +335,7 @@ class Type1 extends AppEntity
     /**
      * Get question6
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion6()
     {
@@ -345,7 +345,7 @@ class Type1 extends AppEntity
     /**
      * Set question7
      *
-     * @param string $question7
+     * @param boolean $question7
      * @return Type1
      */
     public function setQuestion7($question7)
@@ -358,7 +358,7 @@ class Type1 extends AppEntity
     /**
      * Get question7
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion7()
     {
@@ -368,7 +368,7 @@ class Type1 extends AppEntity
     /**
      * Set question8
      *
-     * @param string $question8
+     * @param boolean $question8
      * @return Type1
      */
     public function setQuestion8($question8)
@@ -381,7 +381,7 @@ class Type1 extends AppEntity
     /**
      * Get question8
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion8()
     {
@@ -391,7 +391,7 @@ class Type1 extends AppEntity
     /**
      * Set question9
      *
-     * @param string $question9
+     * @param boolean $question9
      * @return Type1
      */
     public function setQuestion9($question9)
@@ -404,7 +404,7 @@ class Type1 extends AppEntity
     /**
      * Get question9
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion9()
     {
@@ -414,7 +414,7 @@ class Type1 extends AppEntity
     /**
      * Set question10
      *
-     * @param string $question10
+     * @param boolean $question10
      * @return Type1
      */
     public function setQuestion10($question10)
@@ -427,7 +427,7 @@ class Type1 extends AppEntity
     /**
      * Get question10
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion10()
     {
@@ -437,7 +437,7 @@ class Type1 extends AppEntity
     /**
      * Set question11
      *
-     * @param string $question11
+     * @param boolean $question11
      * @return Type1
      */
     public function setQuestion11($question11)
@@ -450,7 +450,7 @@ class Type1 extends AppEntity
     /**
      * Get question11
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion11()
     {
@@ -460,7 +460,7 @@ class Type1 extends AppEntity
     /**
      * Set question12
      *
-     * @param string $question12
+     * @param boolean $question12
      * @return Type1
      */
     public function setQuestion12($question12)
@@ -473,7 +473,7 @@ class Type1 extends AppEntity
     /**
      * Get question12
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion12()
     {
@@ -483,7 +483,7 @@ class Type1 extends AppEntity
     /**
      * Set question13
      *
-     * @param string $question13
+     * @param boolean $question13
      * @return Type1
      */
     public function setQuestion13($question13)
@@ -496,7 +496,7 @@ class Type1 extends AppEntity
     /**
      * Get question13
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion13()
     {
@@ -506,7 +506,7 @@ class Type1 extends AppEntity
     /**
      * Set question14
      *
-     * @param string $question14
+     * @param boolean $question14
      * @return Type1
      */
     public function setQuestion14($question14)
@@ -519,7 +519,7 @@ class Type1 extends AppEntity
     /**
      * Get question14
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion14()
     {
@@ -529,7 +529,7 @@ class Type1 extends AppEntity
     /**
      * Set question15
      *
-     * @param string $question15
+     * @param boolean $question15
      * @return Type1
      */
     public function setQuestion15($question15)
@@ -542,7 +542,7 @@ class Type1 extends AppEntity
     /**
      * Get question15
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion15()
     {
@@ -552,7 +552,7 @@ class Type1 extends AppEntity
     /**
      * Set question16
      *
-     * @param string $question16
+     * @param boolean $question16
      * @return Type1
      */
     public function setQuestion16($question16)
@@ -565,7 +565,7 @@ class Type1 extends AppEntity
     /**
      * Get question16
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion16()
     {
@@ -575,7 +575,7 @@ class Type1 extends AppEntity
     /**
      * Set question17
      *
-     * @param string $question17
+     * @param boolean $question17
      * @return Type1
      */
     public function setQuestion17($question17)
@@ -588,7 +588,7 @@ class Type1 extends AppEntity
     /**
      * Get question17
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion17()
     {
@@ -598,7 +598,7 @@ class Type1 extends AppEntity
     /**
      * Set question18
      *
-     * @param string $question18
+     * @param boolean $question18
      * @return Type1
      */
     public function setQuestion18($question18)
@@ -611,7 +611,7 @@ class Type1 extends AppEntity
     /**
      * Get question18
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion18()
     {
@@ -621,7 +621,7 @@ class Type1 extends AppEntity
     /**
      * Set question19
      *
-     * @param string $question19
+     * @param boolean $question19
      * @return Type1
      */
     public function setQuestion19($question19)
@@ -634,7 +634,7 @@ class Type1 extends AppEntity
     /**
      * Get question19
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion19()
     {
@@ -644,7 +644,7 @@ class Type1 extends AppEntity
     /**
      * Set question20
      *
-     * @param string $question20
+     * @param boolean $question20
      * @return Type1
      */
     public function setQuestion20($question20)
@@ -657,7 +657,7 @@ class Type1 extends AppEntity
     /**
      * Get question20
      *
-     * @return string
+     * @return boolean
      */
     public function getQuestion20()
     {

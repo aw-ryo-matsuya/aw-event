@@ -9,9 +9,9 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * AppEntity
  *
- * @ORM\MappedSuperclass
- * @ORM\HasLifecycleCallbacks
  * @Gedmo\SoftDeleteable(fieldName="deletedAt")
+ * @ORM\HasLifecycleCallbacks
+ * @ORM\MappedSuperclass
  */
 abstract class AppEntity
 {
@@ -20,35 +20,35 @@ abstract class AppEntity
      *
      * @ORM\Column(name="created_by", type="integer", nullable=true)
      */
-    protected $createdBy = null;
+    protected $createdBy = NULL;
 
     /**
      * @var integer
      *
      * @ORM\Column(name="updated_by", type="integer", nullable=true)
      */
-    protected $updatedBy = null;
+    protected $updatedBy = NULL;
 
     /**
-     * @var datetime
+     * @var \DateTime
      *
      * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
-    protected $createdAt = null;
+    protected $createdAt = NULL;
 
-     /**
-     * @var datetime
+    /**
+     * @var \DateTime
      *
      * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
-    protected $updatedAt = null;
+    protected $updatedAt = NULL;
 
     /**
-     * @var dateTime
+     * @var \DateTime
      *
      * @ORM\Column(name="deleted_at", type="datetime", nullable=true)
      */
-    protected $deletedAt = null;
+    protected $deletedAt = NULL;
 
 
 
@@ -172,14 +172,13 @@ abstract class AppEntity
      */
     public function prePersist()
     {
+        $this->createdAt = new \Datetime();
         $currentUser = Util::getCurrentUser();
         if ($currentUser) {
             $this->createdBy = $currentUser->getId();
         } else {
             $this->createdBy = 999999999;
         }
-
-        $this->createdAt = new \Datetime();
     }
 
     /**
@@ -187,13 +186,12 @@ abstract class AppEntity
      */
     public function preUpdate()
     {
+        $this->updatedAt = new \Datetime();
         $currentUser = Util::getCurrentUser();
         if ($currentUser) {
             $this->updatedBy = $currentUser->getId();
         } else {
             $this->updatedBy = 999999999;
         }
-
-        $this->updatedAt = new \Datetime();
     }
 }

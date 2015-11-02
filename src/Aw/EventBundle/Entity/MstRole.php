@@ -2,6 +2,7 @@
 
 namespace Aw\EventBundle\Entity;
 
+use Aw\EventBundle\Entity\AppEntity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Security\Core\Role\RoleInterface;
@@ -12,7 +13,7 @@ use Symfony\Component\Security\Core\Role\RoleInterface;
  * @ORM\Table(name="mst_role")
  * @ORM\Entity(repositoryClass="Aw\EventBundle\Entity\Repository\MstRoleRepository")
  */
-class MstRole implements RoleInterface
+class MstRole extends AppEntity implements RoleInterface
 {
     /**
      * @var integer
@@ -31,24 +32,40 @@ class MstRole implements RoleInterface
     private $roleName;
 
     /**
-     * @var users
+     * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="User", mappedBy="groups")
      */
     private $users;
 
-    public function __toString()
+    public function __construct()
     {
-        return $this->getRoleName();
+        $this->users = new ArrayCollection();
     }
 
 
 
+    public function __toString()
+    {
+        return $this->getRole();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
     public function getId()
     {
         return $this->id;
     }
 
+    /**
+     * Set roleName
+     *
+     * @param string $roleName
+     * @return MstRole
+     */
     public function setRoleName($roleName)
     {
         $this->roleName = $roleName;
@@ -56,8 +73,23 @@ class MstRole implements RoleInterface
         return $this;
     }
 
-    public function getRole()
+    /**
+     * Get roleName
+     *
+     * @return string
+     */
+    public function getRoleName()
     {
         return $this->roleName;
+    }
+
+    /**
+     * Get Role
+     *
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->getName();
     }
 }

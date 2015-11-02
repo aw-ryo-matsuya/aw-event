@@ -7,7 +7,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -42,7 +41,7 @@ class User extends AppEntity implements AdvancedUserInterface, \Serializable
     private $password;
 
     /**
-     * @var mixed
+     * @var \UserRole
      *
      * @ORM\OneToOne(targetEntity="UserRole", inversedBy="user", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="id", referencedColumnName="user_id", nullable=false)
@@ -50,7 +49,7 @@ class User extends AppEntity implements AdvancedUserInterface, \Serializable
     private $userRole;
 
     /**
-     * @var arrayCollection
+     * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="MstRole")
      * @ORM\JoinTable(name="user_role",
@@ -58,12 +57,7 @@ class User extends AppEntity implements AdvancedUserInterface, \Serializable
      *     inverseJoinColumns={@ORM\JoinColumn(name="mst_role_id", referencedColumnName="id")}
      * )
      */
-    protected $userRoles;
-
-    public function __toString()
-    {
-        return "$this->username";
-    }
+    private $userRoles;
 
     public function __construct()
     {
@@ -72,11 +66,27 @@ class User extends AppEntity implements AdvancedUserInterface, \Serializable
 
 
 
+    public function __toString()
+    {
+        return "$this->username";
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
     public function getId()
     {
         return $this->id;
     }
 
+    /**
+     * Set username
+     *
+     * @param string $username
+     * @return User
+     */
     public function setUsername($username)
     {
         $this->username = $username;
@@ -84,11 +94,22 @@ class User extends AppEntity implements AdvancedUserInterface, \Serializable
         return $this;
     }
 
+    /**
+     * Get username
+     *
+     * @return string
+     */
     public function getUsername()
     {
         return $this->username;
     }
 
+    /**
+     * Set password
+     *
+     * @param string $password
+     * @return User
+     */
     public function setPassword($password)
     {
         $this->password = $password;
@@ -96,12 +117,23 @@ class User extends AppEntity implements AdvancedUserInterface, \Serializable
         return $this;
     }
 
+    /**
+     * Get password
+     *
+     * @return string
+     */
     public function getPassword()
     {
         return $this->password;
     }
 
-    public function setUserRole($userRole)
+    /**
+     * Set userRole
+     *
+     * @param \Aw\EventBundle\Entity\UserRole $userRole
+     * @return User
+     */
+    public function setUserRole(\Aw\EventBundle\Entity\UserRole $userRole = NULL)
     {
         if ($this->userRole !== $userRole) {
             $this->userRole = $userRole;
@@ -111,51 +143,80 @@ class User extends AppEntity implements AdvancedUserInterface, \Serializable
         return $this;
     }
 
+    /**
+     * Get userRole
+     *
+     * @return \Aw\EventBundle\Entity\UserRole
+     */
     public function getUserRole()
     {
         return $this->userRole;
     }
 
+    /**
+     * Get userRoles
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
     public function getUserRoles()
     {
         return $this->userRoles;
     }
 
+    /**
+     * Get roles
+     *
+     * @return array
+     */
     public function getRoles()
     {
         return $this->getUserRoles()->toArray();
     }
 
+    /**
+     * Get salt
+     *
+     * @return string
+     */
     public function getSalt()
     {
         return '';
     }
 
-    public function eraseCredentials()
-    {
-    }
-
-    public function equals(AdvancedUserInterface $user)
-    {
-        return $this->getUsername() == $user->getUsername();
-    }
-
+    /**
+     * @see \Serializable::serialize()
+     */
     public function serialize()
     {
         return serialize(array(
             $this->id,
             $this->username,
-            $this->password,
+            $this->password
         ));
     }
 
+    /**
+     * @see \Serializable::unserialize()
+     */
     public function unserialize($serialized)
     {
         list (
             $this->id,
             $this->username,
-            $this->password,
+            $this->password
         ) = unserialize($serialized);
+    }
+
+    /**
+     * @return boolean
+     */
+    public function equals(AdvancedUserInterface $user)
+    {
+        return $this->getUsername() == $user->getUsername();
+    }
+
+    public function eraseCredentials()
+    {
     }
 
     public function isEnabled()
@@ -163,12 +224,12 @@ class User extends AppEntity implements AdvancedUserInterface, \Serializable
         return true;
     }
 
-    public function isAccountNonExpired()
+    public function isAccountNonLocked()
     {
         return true;
     }
 
-    public function isAccountNonLocked()
+    public function isAccountNonExpired()
     {
         return true;
     }

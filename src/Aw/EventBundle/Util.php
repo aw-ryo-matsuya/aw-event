@@ -21,7 +21,7 @@ class Util
     {
         global $kernel;
         $token = $kernel->getContainer()->get('security.context')->getToken();
-        $currentUser = $token ? $token->getUser() : null;
+        $currentUser = $token ? $token->getUser() : NULL;
 
         return $currentUser;
     }
