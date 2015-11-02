@@ -60,13 +60,15 @@ abstract class AppEntity
      */
     public function setCreatedBy($createdBy)
     {
+        $this->createdBy = $createdBy;
+
         return $this;
     }
 
     /**
      * Get createdBy
      *
-     * @return
+     * @return integer
      */
     public function getCreatedBy()
     {
@@ -81,13 +83,15 @@ abstract class AppEntity
      */
     public function setUpdatedBy($updatedBy)
     {
+        $this->updatedBy = $updatedBy;
+
         return $this;
     }
 
     /**
      * Get updatedBy
      *
-     * @return
+     * @return integer
      */
     public function getUpdatedBy()
     {
@@ -97,18 +101,20 @@ abstract class AppEntity
     /**
      * Set createdAt
      *
-     * @param mixed $createdAt
+     * @param \DateTime $createdAt
      * @return AtstampBase
      */
     public function setCreatedAt($createdAt)
     {
+        $this->createdAt = $createdAt;
+
         return $this;
     }
 
     /**
      * Get createdAt
      *
-     * @return
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -118,18 +124,20 @@ abstract class AppEntity
     /**
      * Set updatedAt
      *
-     * @param mixed $updatedAt
+     * @param \DateTime $updatedAt
      * @return AtstampBase
      */
     public function setUpdatedAt($updatedAt)
     {
+        $this->updatedAt = $updatedAt;
+
         return $this;
     }
 
     /**
-     * Get updateAt
+     * Get updatedAt
      *
-     * @return
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -152,7 +160,7 @@ abstract class AppEntity
     /**
      * Get deletedAt
      *
-     * @return
+     * @return \DateTime
      */
     public function getDeletedAt()
     {
@@ -165,7 +173,6 @@ abstract class AppEntity
     public function prePersist()
     {
         $currentUser = Util::getCurrentUser();
-
         if ($currentUser) {
             $this->createdBy = $currentUser->getId();
         } else {
@@ -181,11 +188,10 @@ abstract class AppEntity
     public function preUpdate()
     {
         $currentUser = Util::getCurrentUser();
-
         if ($currentUser) {
             $this->updatedBy = $currentUser->getId();
         } else {
-            $this->updatedBy = $this->updatedBy = 999999999;
+            $this->updatedBy = 999999999;
         }
 
         $this->updatedAt = new \Datetime();

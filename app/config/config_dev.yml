@@ -46,6 +46,9 @@ monolog:
 
 assetic:
     use_controller: true
+    filters:
+        compass: ~
+        sass:    ~
 
 #swiftmailer:
 #    delivery_address: me@example.com
