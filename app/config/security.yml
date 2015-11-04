@@ -16,9 +16,6 @@ security:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        login:
-            pattern:  ^/login$
-            security: false
         top:
             pattern:  ^/top
             security: false
@@ -32,7 +29,7 @@ security:
                 success_handler: aw.login_success_handler
             logout:
                 path: /logout
-                target: /login
+                target: /top/login
     access_control:
         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/member/, roles: ROLE_MEMBER }

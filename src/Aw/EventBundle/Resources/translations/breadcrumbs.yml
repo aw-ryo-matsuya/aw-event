@@ -1,6 +1,12 @@
 #パンくずリスト
 breadcrumbs:
 #####公開
+    #エニアグラム診断(無料)
+    diagnose_enneagram_free:
+        1: top
+        1_name: トップページ
+        2:
+        2_name: エニアグラム診断(無料)
     #ログイン
     login:
         1: top

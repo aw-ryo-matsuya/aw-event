@@ -90,6 +90,6 @@ class MstRole extends AppEntity implements RoleInterface
      */
     public function getRole()
     {
-        return $this->getName();
+        return $this->getRoleName();
     }
 }

@@ -9,6 +9,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContext;
 
+/**
+ * トップページ
+ *
+ * @Route("/top")
+ */
 class TopPageController extends AppController
 {
     /**

@@ -24,7 +24,6 @@ class UserType extends AbstractType
             ->add('role', 'choice', array(
                 'mapped'   => false,
                 'expanded' => true,
-                'data'     => 2,
                 'choices'  => array(
                     '2' => '一般'
                 )
