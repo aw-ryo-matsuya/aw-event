@@ -1,0 +1,41 @@
+{% extends "AwEventBundle::layout.html.twig" %}
+
+{% block page_title -%}
+    {{ 'com_page.typeTrendScreen'|trans }}
+{% endblock %}
+
+{% block body -%}
+<div class="my-table-responsive">
+{% for i in 1..9 %}
+    <h4>Type{{ i }}：{{ ('enneagram.type' ~ i ~ '.trend')|trans }}</h4>
+    <table class="table table-striped table-bordered table-condensed table-hover">
+        <tbody>
+            <tr>
+                <td>{{ 'enneagram.personality'|trans }}</td>
+                <td>{{ ('enneagram.type' ~ i ~ '.personality')|trans }}</td>
+            </tr>
+            <tr>
+                <td>{{ 'enneagram.phrase'|trans }}</td>
+                <td>{{ ('enneagram.type' ~ i ~ '.phrase')|trans }}</td>
+            </tr>
+            <tr>
+                <td>{{ 'enneagram.advantage'|trans }}</td>
+                <td>{{ ('enneagram.type' ~ i ~ '.advantage')|trans }}</td>
+            </tr>
+            <tr>
+                <td>{{ 'enneagram.shortcomings'|trans }}</td>
+                <td>{{ ('enneagram.type' ~ i ~ '.shortcomings')|trans }}</td>
+            </tr>
+            <tr>
+                <td>{{ 'enneagram.problem'|trans }}</td>
+                <td>{{ ('enneagram.type' ~ i ~ '.problem')|trans }}</td>
+            </tr>
+            <tr>
+                <td>{{ 'enneagram.solution'|trans }}</td>
+                <td>{{ ('enneagram.type' ~ i ~ '.solution')|trans }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endfor %}
+</div>
+{% endblock %}

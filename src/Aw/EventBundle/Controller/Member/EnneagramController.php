@@ -77,21 +77,35 @@ class EnneagramController extends AppController
             return $this->redirect($this->generateUrl('diagnose_enneagram_option'));
         }
 
-        return $this->redirect($this->generateUrl('diagnose_enneagram_option'));
+        return $this->redirect($this->generateUrl('show_enneagram', array('userId' => $userId)));
     }
 
     /**
-     * エニアグラム診断(会員)
+     * タイプの傾向
      *
-     * @Route("/show_enneagram", name="show_enneagram")
+     * @Route("/trend_enneagram/{type}", name="trend_enneagram")
+     * @Method("GET")
+     * @Template("AwEventBundle:Common:typeTrend.html.twig")
+     */
+    public function typeTrendAction(Request $request, $type)
+    {
+        $userId = Util::getCurrentUser()->getId();
+        $this->setBreadcrumbList('trend_enneagram', $userId, 2);
+
+        return array();
+    }
+
+    /**
+     * エニアグラム診断結果確認
+     *
+     * @Route("/show_enneagram/{userId}", name="show_enneagram")
      * @Method("GET")
      * @Template()
      */
-    public function showAction(Request $request)
+    public function showAction(Request $request, $userId)
     {
         $this->setBreadcrumbList('show_enneagram');
         $em = $this->getDoctrine()->getManager();
-        $userId = $request->query->get('userId');
         for ($i=1; $i<=9; $i++) {
             ${'type' . $i} = $em->getRepository('AwEventBundle:Type' . $i)->findOneByUserId($userId);
             ${'type' . $i . 'Form'} = $this->createTypeForm($i, ${'type' . $i});
