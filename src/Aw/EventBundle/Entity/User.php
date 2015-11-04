@@ -41,6 +41,13 @@ class User extends AppEntity implements AdvancedUserInterface, \Serializable
     private $password;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="enneagram_type", type="string", length=1, nullable=true)
+     */
+    private $enneagramType;
+
+    /**
      * @var \UserRole
      *
      * @ORM\OneToOne(targetEntity="UserRole", inversedBy="user", cascade={"persist", "remove"})
@@ -125,6 +132,29 @@ class User extends AppEntity implements AdvancedUserInterface, \Serializable
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * Set enneagramType
+     *
+     * @param string $enneagramType
+     * @return User
+     */
+    public function setEnneagramType($enneagramType)
+    {
+        $this->enneagramType = $enneagramType;
+
+        return $this;
+    }
+
+    /**
+     * Get enneagramType
+     *
+     * @return string
+     */
+    public function getEnneagramType()
+    {
+        return $this->enneagramType;
     }
 
     /**

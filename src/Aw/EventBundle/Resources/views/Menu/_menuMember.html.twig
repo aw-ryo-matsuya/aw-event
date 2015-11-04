@@ -3,7 +3,11 @@
         <a href="{{ path('member_my_page') }}">マイページ</a>
     </li>
     <li>
-        <a href="{{ path('diagnose_enneagram_option') }}">エニアグラム診断</a>
+        {% if app.user.enneagramType is null %}
+            <a href="{{ path('diagnose_enneagram_option') }}">エニアグラム診断</a>
+        {% else %}
+            <a href="{{ path('show_enneagram', {'userId':app.user.id}) }}">あなたのタイプ</a>
+        {% endif %}
     </li>
     <li>
         <a href="{{ path('logout') }}">ログアウト</a>

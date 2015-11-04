@@ -20,6 +20,11 @@ breadcrumbs:
         1_name: マイページ
         2:
         2_name: エニアグラム診断
+    show_enneagram:
+        1: member_my_page
+        1_name: マイページ
+        2:
+        2_name: エニアグラム診断結果
 #####システム管理者
     #ユーザ管理
     user_index:

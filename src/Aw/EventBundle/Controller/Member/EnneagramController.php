@@ -19,11 +19,11 @@ class EnneagramController extends AppController
     /**
      * エニアグラム診断(会員)
      *
-     * @Route("/enneagram", name="diagnose_enneagram_option")
+     * @Route("/diagnose_enneagram", name="diagnose_enneagram_option")
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
+    public function diagnoseAction()
     {
         $this->setBreadcrumbList('diagnose_enneagram_option');
         for ($i=1; $i<=9; $i++) {
@@ -74,8 +74,39 @@ class EnneagramController extends AppController
             $em->getConnection()->rollback();
             $em->close();
             $request->getSession()->getFlashBag()->set('error', '診断結果の保存に失敗しました');
+            return $this->redirect($this->generateUrl('diagnose_enneagram_option'));
         }
 
         return $this->redirect($this->generateUrl('diagnose_enneagram_option'));
+    }
+
+    /**
+     * エニアグラム診断(会員)
+     *
+     * @Route("/show_enneagram", name="show_enneagram")
+     * @Method("GET")
+     * @Template()
+     */
+    public function showAction(Request $request)
+    {
+        $this->setBreadcrumbList('show_enneagram');
+        $em = $this->getDoctrine()->getManager();
+        $userId = $request->query->get('userId');
+        for ($i=1; $i<=9; $i++) {
+            ${'type' . $i} = $em->getRepository('AwEventBundle:Type' . $i)->findOneByUserId($userId);
+            ${'type' . $i . 'Form'} = $this->createTypeForm($i, ${'type' . $i});
+        }
+
+        return array(
+            'type1Form' => $type1Form->createView(),
+            'type2Form' => $type2Form->createView(),
+            'type3Form' => $type3Form->createView(),
+            'type4Form' => $type4Form->createView(),
+            'type5Form' => $type5Form->createView(),
+            'type6Form' => $type6Form->createView(),
+            'type7Form' => $type7Form->createView(),
+            'type8Form' => $type8Form->createView(),
+            'type9Form' => $type9Form->createView()
+        );
     }
 }

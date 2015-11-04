@@ -331,6 +331,7 @@ create table user (
   id int(11) auto_increment not null comment 'ID'
   , username varchar(40) not null comment 'ユーザネーム'
   , password varchar(40) not null comment 'パスワード'
+  , enneagram_type char(1) comment 'エニアグラムタイプ'
   , created_by int(11) comment '登録者'
   , updated_by int(11) comment '更新者'
   , created_at datetime comment '登録日時'

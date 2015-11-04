@@ -18,11 +18,11 @@ class EnneagramController extends AppController
     /**
      * エニアグラム診断(無料)
      *
-     * @Route("/enneagram", name="diagnose_enneagram_free")
+     * @Route("/diagnose_enneagram", name="diagnose_enneagram_free")
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
+    public function diagnoseAction()
     {
         $this->setBreadcrumbList('diagnose_enneagram_free');
         for ($i=1; $i<=9; $i++) {
