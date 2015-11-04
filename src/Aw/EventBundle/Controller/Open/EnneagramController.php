@@ -3,15 +3,6 @@
 namespace Aw\EventBundle\Controller\Open;
 
 use Aw\EventBundle\Controller\AppController;
-use Aw\EventBundle\Entity\Type1;
-use Aw\EventBundle\Entity\Type2;
-use Aw\EventBundle\Entity\Type3;
-use Aw\EventBundle\Entity\Type4;
-use Aw\EventBundle\Entity\Type5;
-use Aw\EventBundle\Entity\Type6;
-use Aw\EventBundle\Entity\Type7;
-use Aw\EventBundle\Entity\Type8;
-use Aw\EventBundle\Entity\Type9;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -34,18 +25,10 @@ class EnneagramController extends AppController
     public function indexAction()
     {
         $this->setBreadcrumbList('diagnose_enneagram_free');
-        $type1 = new Type1();
-        $type2 = new Type2();
-        $type3 = new Type3();
-        $type4 = new Type4();
-        $type5 = new Type5();
-        $type6 = new Type6();
-        $type7 = new Type7();
-        $type8 = new Type8();
-        $type9 = new Type9();
         for ($i=1; $i<=9; $i++) {
-            $createForm = "createType{$i}Form";
-            ${'type' . $i . 'Form'} = $this->$createForm(${'type' . $i});
+            ${'name' . $i} = '\Aw\EventBundle\Entity\Type' . $i;
+            ${'type' . $i} = new ${'name' . $i};
+            ${'type' . $i . 'Form'} = $this->createTypeForm($i, ${'type' . $i});
         }
 
         return array(
