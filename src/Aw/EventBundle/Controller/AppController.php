@@ -12,8 +12,7 @@ abstract class AppController extends Controller
      */
     protected function createTypeForm($iterator, $entity)
     {
-        $class = '\Aw\EventBundle\Form\Type' . $iterator . 'Type';
-        $form = $this->createForm(new $class(), $entity, array(
+        $form = $this->createForm(new \Aw\EventBundle\Form\TypeFormType($iterator), $entity, array(
             'method' => 'POST'
         ));
 
