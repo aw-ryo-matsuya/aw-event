@@ -31,6 +31,6 @@ security:
                 path: /logout
                 target: /top/login
     access_control:
-        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/top$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/member/, roles: ROLE_MEMBER }
         - { path: ^/super_admin/, roles: ROLE_SUPER_ADMIN }

@@ -8,13 +8,15 @@ use Symfony\Component\Yaml\Parser;
 abstract class AppController extends Controller
 {
     /**
-     * createTypeForm
+     * タイプ診断フォーム作成
      */
     protected function createTypeForm($iterator, $entity)
     {
         $form = $this->createForm(new \Aw\EventBundle\Form\TypeFormType($iterator), $entity, array(
             'method' => 'POST'
         ));
+
+        $form->add('submit', 'submit');
 
         return $form;
     }

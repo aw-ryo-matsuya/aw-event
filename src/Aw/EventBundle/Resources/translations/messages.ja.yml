@@ -1,6 +1,7 @@
 #共通
 com_button:
     cancel: キャンセル
+    clear: クリア
     createOK: 登録OK
     createConf: 登録確認
     new: 新規
@@ -12,6 +13,8 @@ com_message:
     createOK: 登録が完了しました
     newConf: 下記内容で登録します
 #画面定義
+member:
+    enneagramScreen: エニアグラム診断
 top_page:
     enneagramScreen: エニアグラム診断(無料)
     indexScreen: トップページ

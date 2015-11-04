@@ -32,6 +32,7 @@ class TypeFormType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
+            'required'   => false,
             'data_class' => 'Aw\EventBundle\Entity\Type' . $this->iterator
         ));
     }
