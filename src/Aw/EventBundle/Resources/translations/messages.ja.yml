@@ -17,6 +17,7 @@ com_message:
 #画面定義
 member:
     enneagramScreen: エニアグラム診断
+    selectTypeScreen: タイプ選択
     showEnneagramScreen: エニアグラム診断結果
 top_page:
     enneagramScreen: エニアグラム診断(無料)

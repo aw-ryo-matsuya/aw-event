@@ -34,6 +34,13 @@ breadcrumbs:
         2_name: エニアグラム診断結果
         3:
         3_name: エニアグラムで分類される9つのタイプ
+    select_type:
+        1: member_my_page
+        1_name: マイページ
+        2: diagnose_enneagram_option
+        2_name: エニアグラム診断
+        3:
+        3_name: タイプ選択
     show_enneagram:
         1: member_my_page
         1_name: マイページ

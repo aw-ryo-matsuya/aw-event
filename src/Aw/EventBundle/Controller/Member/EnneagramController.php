@@ -43,6 +43,7 @@ class EnneagramController extends AppController
      */
     public function createAction(Request $request)
     {
+        $checked = array();
         $userId = Util::getCurrentUser()->getId();
         $em = $this->getDoctrine()->getManager();
         $em->getConnection()->beginTransaction();
@@ -51,15 +52,22 @@ class EnneagramController extends AppController
                 ${'name' . $i} = '\Aw\EventBundle\Entity\Type' . $i;
                 ${'type' . $i} = new ${'name' . $i};
                 ${'type' . $i . 'Form'} = $this->createTypeForm($i, ${'type' . $i});
-                ${'type' . $i . 'Form'}->handleRequest($request);
+                ${'type' . $i . 'Form'}->submit($request);
                 if (${'type' . $i . 'Form'}->isValid()) {
+                    $counter = 0;
+                    for ($j=1; $j<=20; $j++) {
+                        $getter = "getQuestion{$j}";
+                        if (${'type' . $i}->$getter()) {
+                            $counter++;
+                        }
+                    }
+                    $checked[$i] = $counter;
                     ${'type' . $i}->setUserId($userId);
                     $em->persist(${'type' . $i});
                     $em->flush();
                 }
             }
             $em->getConnection()->commit();
-            $request->getSession()->getFlashBag()->set('success', '診断結果を保存しました');
         } catch (Exception $e) {
             $em->getConnection()->rollback();
             $em->close();
@@ -67,7 +75,57 @@ class EnneagramController extends AppController
             return $this->redirect($this->generateUrl('diagnose_enneagram_option'));
         }
 
+        // タイプを決定
+        $yourType = array_keys($checked, max($checked));
+        if (count($yourType) == 1) {
+            $user = $em->getRepository('AwEventBundle:User')->find($userId);
+            $user->setEnneagramType(array_shift($yourType));
+            $em->flush();
+            $request->getSession()->getFlashBag()->set('success', '診断結果を保存しました');
+        } else {
+            $request->getSession()->getFlashBag()->set('warning', 'タイプが重複しています');
+            return $this->redirect($this->generateUrl('select_type', array('choices' => $yourType)));
+        }
+
         return $this->redirect($this->generateUrl('show_enneagram', array('userId' => $userId)));
+    }
+
+    /**
+     * タイプ選択
+     *
+     * @Route("/select_type", name="select_type")
+     * @Template()
+     */
+    public function selectTypeAction(Request $request)
+    {
+        if ($request->getMethod() === 'GET') {
+            $this->setBreadcrumbList('select_type');
+            $choices = array();
+            foreach ($request->query->get('choices') as $list) {
+                $choices[$list] = 'タイプ' . $list;
+            }
+            $form = $this->get('form.factory')->createNamedBuilder('select_type', 'form')
+                ->add('type', 'choice', array(
+                    'expanded' => true,
+                    'choices'  => $choices
+                ))
+                ->getForm();
+
+            return array(
+                'form' => $form->createView()
+            );
+        } else {
+            $em = $this->getDoctrine()->getManager();
+            $selected = $request->request->get('select_type');
+            $userId = Util::getCurrentUser()->getId();
+
+            $user = $em->getRepository('AwEventBundle:User')->find($userId);
+            $user->setEnneagramType(array_shift($selected));
+            $em->flush();
+            $request->getSession()->getFlashBag()->set('success', '診断結果を保存しました');
+
+            return $this->redirect($this->generateUrl('show_enneagram', array('userId' => $userId)));
+        }
     }
 
     /**
