@@ -4,6 +4,7 @@ com_button:
     clear: クリア
     createOK: 登録OK
     createConf: 登録確認
+    diagnose: 診断
     new: 新規
 com_column:
     select: 選択

@@ -23,9 +23,14 @@
     </div>
     <section class="button-area">
         <div class="btn-group">
-            <a href="{{ path('diagnose_enneagram_option') }}" class="btn btn-default btn-sm">{{ 'com_button.clear'|trans }}</a>
+            <button id="clear" type="button" class="btn btn-default btn-sm">{{ 'com_button.clear'|trans }}</a>
             <button type="submit" class="btn btn-primary btn-sm">{{ 'com_button.createOK'|trans }}</bu4tton>
         </div>
     </section>
 </form>
+<script type="text/javascript">
+    $("#clear").click(function() {
+        $('input[type="checkbox"]').each(function(){$(this).removeAttr('checked')})
+    });
+</script>
 {% endblock %}

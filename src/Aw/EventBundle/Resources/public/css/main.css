@@ -18,7 +18,7 @@ body {
 }
 .aw-navbar {
   margin: 20px 0px 20px 0px;
-  clear:both;
+  clear: both;
 }
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
@@ -27,8 +27,8 @@ body {
   color: #fff;
 }
 .nav > li > a {
-  background-color:#8cd9f7;
-  color:#FFFFFF;
+  background-color: #8cd9f7;
+  color: #FFFFFF;
   display: block;
   padding: 10px 3px;
   position: relative;
@@ -44,13 +44,34 @@ body {
   -webkit-border-top-right-radius: 4px;
 }
 footer {
-  background-color:#8cd9f7;
+  background-color: #8cd9f7;
   clear: both;
-  color:#fff;
+  color: #fff;
   display: block;
-  height:42px;
-  margin-top:40px;
-  padding-top:10px;
-  text-align:center;
-  vertical-align:middle;
+  height: 42px;
+  margin-top: 40px;
+  padding-top: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.type-link {
+  margin: 5px 5px;
+  padding: 30px;
+  border: solid #8cd9f7;
+}
+.type-table {
+  margin: auto;
+  max-width: 800px;
+  text-align: center;
+}
+.type-cnt {
+  display: inline-block;
+  border-radius: 3px;
+  background: #8cd9f7;
+  text-align: center;
+  width: 130px;
+  border: none;
+  color: blue;
+  font-weight: bold;
 }
