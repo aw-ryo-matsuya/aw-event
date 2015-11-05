@@ -7,6 +7,13 @@ breadcrumbs:
         1_name: トップページ
         2:
         2_name: エニアグラム診断(無料)
+    trend_enneagram_free:
+        1: top
+        1_name: トップページ
+        2: diagnose_enneagram_free
+        2_name: エニアグラム診断(無料)
+        3:
+        3_name: エニアグラムで分類される9つのタイプ
     #ログイン
     login:
         1: top
@@ -20,18 +27,18 @@ breadcrumbs:
         1_name: マイページ
         2:
         2_name: エニアグラム診断
-    show_enneagram:
-        1: member_my_page
-        1_name: マイページ
-        2:
-        2_name: エニアグラム診断結果
-    trend_enneagram:
+    trend_enneagram_option:
         1: member_my_page
         1_name: マイページ
         2: show_enneagram/%userId%
         2_name: エニアグラム診断結果
         3:
         3_name: エニアグラムで分類される9つのタイプ
+    show_enneagram:
+        1: member_my_page
+        1_name: マイページ
+        2:
+        2_name: エニアグラム診断結果
 #####システム管理者
     #ユーザ管理
     user_index:

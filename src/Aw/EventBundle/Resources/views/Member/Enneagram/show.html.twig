@@ -8,7 +8,7 @@
 {% set enneagramType = app.user.enneagramType %}
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">あなたは<a href="{{ path('trend_enneagram', {'type':'type' ~ enneagramType}) }}">タイプ{{ enneagramType }}</a>です</h3>
+        <h3 class="panel-title">あなたは<a href="{{ path('trend_enneagram_option') }}#type{{ enneagramType }}">タイプ{{ enneagramType }}</a>です</h3>
     </div>
     <div class="panel-body">
         <div class="panel-body">{{ ('enneagram.type' ~ enneagramType ~ '.trend')|trans }}</div>
@@ -20,7 +20,7 @@
         <tbody>
         {% for j in 1..20 %}
             <tr>
-                <td>{{ form_widget(_context['type' ~ i ~ 'Form']['question' ~ j], {'attr':{'disabled':true}}) }}</td>
+                <td>{{ form_widget(_context['type' ~ i ~ 'Form']['question' ~ j], {'attr':{'onclick':"return false;"}}) }}</td>
                 <td>{{ 20 * (i - 1) + loop.index }}</td>
                 <td>{{ ('enneagram.type' ~ i ~ '.question' ~ j)|trans }}</td>
             </tr>
