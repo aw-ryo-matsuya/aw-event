@@ -7,6 +7,9 @@
 {% block body -%}
 <form action="{{ path('select_type') }}" method="POST">
     {{ form_widget(form.type) }}
+    {% for list in form.type.vars.choices %}
+        <li>タイプ{{ list.data }}：{{ ('enneagram.type' ~ list.data ~ '.trend')|trans }}</li>
+    {% endfor %}
     <section class="button-area">
         <div class="btn-group">
             <button type="submit" class="btn btn-primary btn-sm">{{ 'com_button.createOK'|trans }}</bu4tton>
